@@ -26,4 +26,14 @@ class ResetPasswordController extends Controller
      * @var string
      */
     protected $redirectTo = '/home';
+
+// adicionado para alterar politica de senha - troca de senha
+    protected function rules()
+    {
+        return [
+            'token' => 'required',
+            'email' => 'required|email',
+            'password' => ['required', 'confirmed', 'min:4'],
+        ];
+    }
 }
