@@ -30,7 +30,7 @@ Route::resource('/tarefa', TarefaController::class);
 
 // emails
 Route::get('mensagem-teste', function () {
-    //return new MensagemTestMail();
-    Mail::to('rederson_rodrigues@yahoo.com.br')->send(new MensagemTestMail());
-    return "Email enviado com sucesso.";
+    return new MensagemTestMail();
+    // Mail::to('rederson_rodrigues@yahoo.com.br')->send(new MensagemTestMail());
+    // return "Email enviado com sucesso.";
 });
