@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\TarefaController;
+use App\Mail\MensagemTestMail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -25,3 +26,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 // tarefa
 Route::resource('/tarefa', TarefaController::class);
+
+// emails
+Route::get('mensagem-teste', function () {
+    return new MensagemTestMail();
+});
