@@ -3,6 +3,7 @@
 use App\Http\Controllers\TarefaController;
 use App\Mail\MensagemTestMail;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,5 +30,7 @@ Route::resource('/tarefa', TarefaController::class);
 
 // emails
 Route::get('mensagem-teste', function () {
-    return new MensagemTestMail();
+    //return new MensagemTestMail();
+    Mail::to('rederson_rodrigues@yahoo.com.br')->send(new MensagemTestMail());
+    return "Email enviado com sucesso.";
 });
