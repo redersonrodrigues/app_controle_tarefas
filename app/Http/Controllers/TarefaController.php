@@ -122,8 +122,8 @@ class TarefaController extends Controller
 
     public function exportacao() {
 
-      return 'Cheguei aqui';
-        // return Excel::download(new TarefasExport, 'lista_de_tarefas.xlsx');
+    //   return 'Cheguei aqui';
+        return Excel::download(new TarefasExport, 'lista_de_tarefas.xlsx');
     }
 
     
