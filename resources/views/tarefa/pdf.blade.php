@@ -1,61 +1,63 @@
-{{-- <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<html>
 
-        <style>
-            .page-break {
-                page-break-after: always;
-            }
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-            .titulo {
-                border:1px;
-                background-color:#c2c2c2;
-                text-align:center;
-                width:100%;
-                text-transform:uppercase;
-                font-weight:bold;
-                margin-bottom:25px;
-            }
+    <style>
+        /* permite a quebra da pagina ao aplicar esta classe css*/
+        .page-break {
+            page-break-after: always;
+        }
 
-            table th {
-                text-align:left;
-            }
-        </style>
-    </head>
+        /* configuração da pagina */
+        .titulo {
+            border: 1px;
+            background-color: #c2c2c2;
+            text-align: center;
+            width: 100%;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
 
-    <body> --}}
+        table th {
+            text-align: left;
+        }
+    </style>
+</head>
 
-        <div class="titulo">Lista de tarefas</div>
+<body>
 
-        <table style="width:100%">
-            <thead>
+    <div class="titulo">Lista de tarefas</div>
+
+    <table style="width:100%">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tarefa</th>
+                <th>Data limite conclusão</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach ($tarefas as $key => $tarefa)
                 <tr>
-                    <th>ID</th>
-                    <th>Tarefa</th>
-                    <th>Data limite conclusão</th>
+                    <td>{{ $tarefa->id }}</td>
+                    <td>{{ $tarefa->tarefa }}</td>
+                    <td>{{ date('d/m/Y', strtotime($tarefa->data_limite_conclusao)) }}</td>
                 </tr>
-            </thead>
+            @endforeach
+        </tbody>
+    </table>
 
-            <tbody>
-                @foreach($tarefas as $key => $tarefa)
-                    <tr>
-                        <td>{{ $tarefa->id }}</td>
-                        <td>{{ $tarefa->tarefa }}</td>
-                        <td>{{ date('d/m/Y', strtotime($tarefa->data_limite_conclusao)) }}</td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
-{{-- 
-        <div class="page-break"></div>
+    <div class="page-break"></div>
         <h2>Página 2</h2>
 
         <div class="page-break"></div>
         <h2>Página 3</h2>
 
         <div class="page-break"></div>
-        <h2>Página 3</h2>
-    </body>
-</html>
+        <h2>Página 4</h2>
+</body>
 
- --}}
+</html>
