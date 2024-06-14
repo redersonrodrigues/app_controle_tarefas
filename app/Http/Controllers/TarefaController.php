@@ -133,8 +133,8 @@ class TarefaController extends Controller
         //orientação: landscape (paisagem), portrait (retrato)
 
 
-        return $pdf->download('lista_de_tarefas.pdf');
-        //return $pdf->stream('lista_de_tarefas.pdf');
+        //return $pdf->download('lista_de_tarefas.pdf'); // faz o download
+        return $pdf->stream('lista_de_tarefas.pdf'); // permite escolha do usuário
     }
     
 }
