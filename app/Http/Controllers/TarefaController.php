@@ -128,9 +128,9 @@ class TarefaController extends Controller
         $tarefas = auth()->user()->tarefas()->get();
         $pdf = Pdf::loadView('tarefa.pdf', ['tarefas' => $tarefas]);
 
-        //$pdf->setPaper('a4', 'landscape');
-        //tipo de papel: a4, letter
-        //orientação: landscape (paisagem), portrait (retrato)
+        $pdf->setPaper('a4', 'landscape');
+        //1º parâmetro: tipo de papel: a4, letter
+        //2º parâmetro: orientação: landscape (paisagem), portrait (retrato)
 
 
         //return $pdf->download('lista_de_tarefas.pdf'); // faz o download
