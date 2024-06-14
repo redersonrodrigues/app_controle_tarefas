@@ -128,6 +128,8 @@ return [
             'escape_character' => '\\',
             'contiguous'       => false,
             'input_encoding'   => 'UTF-8',
+            // na versão anterior havia necessidade de adequação com habilitação use_bom = true
+            // mas na versão nova não há mais necessidade
         ],
 
         /*
