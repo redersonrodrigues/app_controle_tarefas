@@ -28,11 +28,8 @@ Auth::routes(['verify' => true]);
 //     ->middleware('verified');
 
 // tarefa
-Route::get('tarefa/exportacao', [TarefaController::class, 'exportacao'])
+Route::get('tarefa/exportacao/{extensao}', [TarefaController::class, 'exportacao'])
     ->name('tarefa.exportacao');
-
-// Route::get('tarefa/exportacao/{extensao}', [TarefaController::class, 'exportacao'])
-//     ->name('tarefa.exportacao');
 
 // Route::get('tarefa/exportar', [TarefaController::class, 'exportar'])
 //     ->name('tarefa.exportar');
