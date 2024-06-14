@@ -31,8 +31,8 @@ Auth::routes(['verify' => true]);
 Route::get('tarefa/exportacao/{extensao}', [TarefaController::class, 'exportacao'])
     ->name('tarefa.exportacao');
 
-// Route::get('tarefa/exportar', [TarefaController::class, 'exportar'])
-//     ->name('tarefa.exportar');
+Route::get('tarefa/exportar', [TarefaController::class, 'exportar'])
+    ->name('tarefa.exportar');// rota para trabalhar com dompdf
 
 Route::resource('/tarefa', TarefaController::class)
     ->middleware('verified');
