@@ -23,7 +23,7 @@
         </style>
     </head>
 
-    <body>
+    <body> --}}
 
         <div class="titulo">Lista de tarefas</div>
 
@@ -46,7 +46,7 @@
                 @endforeach
             </tbody>
         </table>
-
+{{-- 
         <div class="page-break"></div>
         <h2>Página 2</h2>
 
@@ -56,7 +56,6 @@
         <div class="page-break"></div>
         <h2>Página 3</h2>
     </body>
-</html> --}}
+</html>
 
-
-<h2>Chegamos até aqui</h2>
+ --}}
