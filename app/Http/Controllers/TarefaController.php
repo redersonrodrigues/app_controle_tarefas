@@ -98,6 +98,14 @@ class TarefaController extends Controller
      */
     public function destroy(Tarefa $tarefa)
     {
-        //
+        // veirificação se a tarefa pertence ao usuário
+        // portanto, somente pode excluir se ele for o dono
+        if(!$tarefa->user_id == auth()->user()->id) {
+            return view('acesso-negado');
+        }
+        // excluindo a tarefa
+        $tarefa->delete();
+        // redirecionando para rota index da tarefa
+        return redirect()->route('tarefa.index');
     }
 }
