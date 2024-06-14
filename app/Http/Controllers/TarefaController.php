@@ -20,33 +20,9 @@ class TarefaController extends Controller
      */
     public function index()
     {
-        $id = Auth::user()->id;
-        $name = Auth::user()->name;
-        $email = Auth::user()->email;
-        return "ID: $id | Nome: $name | Email: $email";
-
-        // //recupera dados do usuario logado com a classe
-        // if (Auth::check()) {
-        //     $id = Auth::user()->id;
-        //     $name = Auth::user()->name;
-        //     $email = Auth::user()->email;
-
-        //     return "ID: $id | Nome: $name | Email: $email";
-        // } else {
-        //     return 'Você não está logado no sistema.';
-        // }
-
-        // //recupera dados do usuario logado com methodo
-        // if (auth()->check()) {
-        //     $id = auth()->user()->id;
-        //     $name = auth()->user()->name;
-        //     $email = auth()->user()->email;
-
-        //     return "ID: $id | Nome: $name | Email: $email";
-
-        // } else {
-        //     return 'Você não está logado no sistema.';
-        // }
+        $user_id = auth()->user()->id;
+        $tarefas = Tarefa::where('user_id', $user_id)->get();
+        return view('tarefa.index',['tarefas' => $tarefas]);
     }
 
     /**
